@@ -24,4 +24,5 @@ set shiftwidth=4
 set noexpandtab
 
 set number
-
+highlight LineNr ctermbg=0
+colorscheme railscasts
