@@ -26,3 +26,5 @@ set noexpandtab
 set number
 highlight LineNr ctermbg=0
 colorscheme railscasts
+
+set omnifunc=phpcomplete#CompletePHP
