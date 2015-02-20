@@ -11,3 +11,9 @@ silent execute '!mkdir -p $HOME/.vim/tmp/views'
 set viewdir=$HOME/.vim/tmp/views
 silent execute '!mkdir -p $HOME/.vim/tmp/undo'
 set undodir=$HOME/.vim/tmp/undo
+
+syntax on
+
+filetype on
+filetype plugin on
+filetype indent on
