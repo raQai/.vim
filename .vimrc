@@ -30,3 +30,10 @@ colorscheme railscasts
 set omnifunc=phpcomplete#CompletePHP
 
 execute pathogen#infect()
+
+autocmd VimEnter * if !argc() | NERDTree | endif
+let NERDTreeQuitOnOpen=1
+
+map <c-l> :tabn<cr>
+map <c-h> :tabp<cr>
+map <c-n> :NERDTreeToggle<cr>
