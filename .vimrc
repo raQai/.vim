@@ -8,6 +8,9 @@ set shiftwidth=3
 set noexpandtab
 set number
 
+" mapping
+nmap <space> :
+
 " search settings
 set incsearch
 set ignorecase
@@ -42,17 +45,16 @@ set omnifunc=phpcomplete#CompletePHP
 execute pathogen#infect()
 
 " NERDTree settings
-autocmd VimEnter * if !argc() | NERDTree | endif
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
-
-" Ctrl-P settings
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" mapping
-nmap <space> :
 
 map <c-l> :tabn<cr>
 map <c-h> :tabp<cr>
 map <c-n> :NERDTreeToggle<cr>
+
+" Ctrl-P settings
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+let g:ctrlp_map='<c-o>'
+
 
