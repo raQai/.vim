@@ -18,8 +18,8 @@ set smartcase
 
 " color settings
 colorscheme railscasts
-hi LineNr ctermbg=0
-hi Search ctermbg=NONE
+autocmd colorscheme * highlight LineNr ctermbg=0
+autocmd colorscheme * highlight Search cterm=reverse ctermbg=NONE
 
 " backup settings
 set backup
