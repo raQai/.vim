@@ -46,6 +46,9 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 
+" Ctrl-P settings
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " mapping
 nmap <space> :
 
