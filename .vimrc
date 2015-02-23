@@ -3,6 +3,9 @@ set nocompatible
 set backup
 set undofile
 
+set mousehide
+set linespace=3
+
 silent execute '!mkdir -p $HOME/.vim/tmp/backup'
 set backupdir=$HOME/.vim/tmp/backup
 silent execute '!mkdir -p $HOME/.vim/tmp/swap'
@@ -18,9 +21,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=3
+set softtabstop=3
+set shiftwidth=3
 set noexpandtab
 
 set number
@@ -37,3 +40,9 @@ let NERDTreeQuitOnOpen=1
 map <c-l> :tabn<cr>
 map <c-h> :tabp<cr>
 map <c-n> :NERDTreeToggle<cr>
+
+set incsearch
+set ignorecase
+set smartcase
+
+nmap <space> :
