@@ -36,6 +36,7 @@ execute pathogen#infect()
 
 autocmd VimEnter * if !argc() | NERDTree | endif
 let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
 
 map <c-l> :tabn<cr>
 map <c-h> :tabp<cr>
