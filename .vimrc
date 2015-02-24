@@ -47,10 +47,16 @@ execute pathogen#infect()
 " NERDTree settings
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
 
 map <c-l> :tabn<cr>
 map <c-h> :tabp<cr>
 map <c-n> :NERDTreeToggle<cr>
 
+" NERDCommenter settings
+nmap <c-c> <leader>c<space>
+vmap <c-c> <leader>c<space>
+
 " Ctrl-P settings
 let g:ctrlp_map='<c-o>'
+
