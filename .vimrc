@@ -8,8 +8,18 @@ set shiftwidth=3
 set noexpandtab
 set number
 
-" mapping
+silent execute '!stty -ixon -ixoff'
+
+" general mapping
 nmap <space> :
+
+nmap <c-s> :NERDTreeClose<cr>:w<cr>
+imap <c-s> <esc>:w<cr>
+vmap <c-s> <esc>:w<cr>
+
+nmap <c-q> :q!<cr>
+imap <c-q> <esc>:q!<cr>
+vmap <c-q> <esc>:q!<cr>
 
 " search settings
 set incsearch
