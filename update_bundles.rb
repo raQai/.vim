@@ -5,6 +5,7 @@ git_bundles = [
   "git://github.com/scrooloose/nerdcommenter",
   "git://github.com/scrooloose/nerdtree",
   "git://github.com/derekwyatt/vim-scala",
+  "git://github.com/drmingdrmer/xptemplate",
 ]   
 
 require 'fileutils'
@@ -22,13 +23,4 @@ git_bundles.each do |url|
   puts "unpacking #{url} into #{dir}"
   `git clone #{url} #{dir}`
   FileUtils.rm_rf(File.join(dir, ".git"))
-end
-
-vim_org_scripts.each do |name, script_id, script_type|
-  puts "downloading #{name}"
-  local_file = File.join(name, script_type, "#{name}.vim")
-  FileUtils.mkdir_p(File.dirname(local_file))
-  File.open(local_file, "w") do |file|
-    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
-  end
 end
