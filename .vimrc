@@ -4,8 +4,6 @@ set si
 set wrap
 
 " general settings
-silent execute '!stty -ixon -ixoff'
-
 set nocompatible
 set mousehide
 
@@ -87,14 +85,6 @@ imap jj <esc>
 cmap kk <esc>
 cmap kk <esc>
 
-noremap <c-s> :update<cr>
-vnoremap <c-s> <esc>:update<cr>
-inoremap <c-s> <esc>:update<cr>
-
-noremap <c-q> :q!<cr>
-vnoremap <c-q> <esc>:q!<cr>
-inoremap <c-q> <esc>:q!<cr>
-
 noremap <c-h> :tabp<cr>
 vnoremap <c-h> <esc>:tabp<cr>
 inoremap <c-h> <esc>:tabp<cr>
@@ -131,3 +121,9 @@ map <c-c> <leader>c<space>
 " Ctrl-P
 let g:ctrlp_map='<c-o>'
 
+" XPTemplate
+let g:xptemplate_minimal_prefix = 0
+let g:xptemplate_key = '<Plug>triggerxpt'
+inoremap <Plug>closePUM <C-v><C-v><BS>
+imap <TAB> <Plug>closePUM<Plug>triggerxpt
+let g:xptemplate_fallback = 'nore:<TAB>'
