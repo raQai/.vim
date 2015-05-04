@@ -4,7 +4,6 @@ set si
 set wrap
 
 " general settings
-""""""""""""""""""""""""""""""""""""""""""""""
 silent execute '!stty -ixon -ixoff'
 
 set nocompatible
@@ -29,7 +28,6 @@ set fillchars=""
 set autoread
 
 " color settings
-""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme railscasts
 
 autocmd colorscheme * highlight LineNr ctermbg=0
@@ -39,7 +37,6 @@ set colorcolumn=80
 autocmd colorscheme * highlight ColorColumn ctermbg=0
 
 " command line settings
-""""""""""""""""""""""""""""""""""""""""""""""
 set ch=2
 set lazyredraw
 set showcmd
@@ -49,49 +46,46 @@ set laststatus=2
 set wildmenu
 
 " cursor settings
-""""""""""""""""""""""""""""""""""""""""""""""
-set scrolloff=8
+set scrolloff=6
 set virtualedit=all
 
+" allows unsaved buffers in the background
+set hidden
+
 " autocomplete settings
-""""""""""""""""""""""""""""""""""""""""""""""
 set showfulltag
 
 " backup and history settings
-""""""""""""""""""""""""""""""""""""""""""""""
 set nobackup
 set nowritebackup
 set noswapfile
-set history=700
-set undolevels=700
+set history=250
+set undolevels=1000
 
 " syntax
-""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 
 filetype on
 filetype plugin on
 filetype indent on
 
-" additional printing options
-""""""""""""""""""""""""""""""""""""""""""""""
-set printoptions=header:0,duplex:long,paper:letter
-
 " search settings
-""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
 
+" command settings
+set timeoutlen=500
+
 " general mapping
-""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <space> :
 let mapleader = ","
-let g:mapleader = ","
 
 imap jj <esc>
-cmap jj <esc>
+imap jj <esc>
+cmap kk <esc>
+cmap kk <esc>
 
 noremap <c-s> :update<cr>
 vnoremap <c-s> <esc>:update<cr>
@@ -109,18 +103,21 @@ noremap <c-l> :tabn<cr>
 vnoremap <c-l> <esc>:tabn<cr>
 inoremap <c-l> <esc>:tabn<cr>
 
-" better code intention
+" better code indentation
 vnoremap < <gv
 vnoremap > >gv
 
 noremap <leader>s :sort<cr>
+" wipe out all buffers
+noremap <silent> <leader>wa :1,9000bwipeout<cr>
+" cd to the directory containing the file in the buffer
+noremap <silent> <leader>cd :lcd %:h<cr>
 " delete trailing spaces
-noremap <F4> :%s/\s\+$//g<cr>:update<cr>
+noremap <silent> <F4> :%s/\s\+$//g<cr>:update<cr>
 " replace tabs with spaces
-noremap <F5> :%s/\t/  /g<cr>:update<cr>
+noremap <silent> <F5> :%s/\t/  /g<cr>:update<cr>
 
 " plugin settings
-""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
