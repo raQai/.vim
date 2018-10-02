@@ -1,4 +1,3 @@
-" TODO what is?
 set shiftround
 set si
 set wrap
@@ -97,7 +96,6 @@ inoremap <c-l> <esc>:tabn<cr>
 vnoremap < <gv
 vnoremap > >gv
 
-noremap <leader>s :sort<cr>
 " wipe out all buffers
 noremap <silent> <leader>wa :1,9000bwipeout<cr>
 " cd to the directory containing the file in the buffer
@@ -106,24 +104,3 @@ noremap <silent> <leader>cd :lcd %:h<cr>
 noremap <silent> <F4> :%s/\s\+$//g<cr>:update<cr>
 " replace tabs with spaces
 noremap <silent> <F5> :%s/\t/  /g<cr>:update<cr>
-
-" plugin settings
-" NERDTree
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-let NERDTreeShowBookmarks=1
-
-map <c-p> :NERDTreeToggle<cr>
-
-" NERDCommenter
-map <c-c> <leader>c<space>
-
-" Ctrl-P
-let g:ctrlp_map='<c-o>'
-
-" XPTemplate
-let g:xptemplate_minimal_prefix = 0
-let g:xptemplate_key = '<Plug>triggerxpt'
-inoremap <Plug>closePUM <C-v><C-v><BS>
-imap <TAB> <Plug>closePUM<Plug>triggerxpt
-let g:xptemplate_fallback = 'nore:<TAB>'
