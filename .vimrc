@@ -6,8 +6,6 @@ set wrap
 set nocompatible
 set mousehide
 
-execute pathogen#infect()
-
 set linespace=3
 
 set tabstop=2
@@ -18,20 +16,25 @@ set smarttab
 set autoindent
 set backspace=2
 
-set number
 set textwidth=0
 set fillchars=""
 
 set autoread
 
-" color settings
-colorscheme railscasts
+" line number
+set number
+highlight linenr ctermbg=24 ctermfg=3
 
-autocmd colorscheme * highlight LineNr ctermbg=0
-autocmd colorscheme * highlight Search cterm=reverse ctermbg=NONE
+" search highlight
+highlight search cterm=reverse ctermbg=NONE
 
+" cursor line
+set cursorline
+highlight cursorline cterm=NONE ctermbg=24
+
+" color column
 set colorcolumn=80
-autocmd colorscheme * highlight ColorColumn ctermbg=0
+highlight colorcolumn ctermbg=24
 
 " command line settings
 set ch=2
@@ -80,8 +83,9 @@ nnoremap <space> :
 let mapleader = ","
 
 imap jj <esc>
-imap jj <esc>
-cmap kk <esc>
+cmap jj <esc>
+
+imap kk <esc>
 cmap kk <esc>
 
 noremap <c-h> :tabp<cr>
