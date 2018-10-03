@@ -100,6 +100,13 @@ inoremap <c-l> <esc>:tabn<cr>
 vnoremap < <gv
 vnoremap > >gv
 
+inoremap {     {}<left>
+inoremap {<cr> {<cr>}<esc>0
+inoremap {{    {
+inoremap {}    {}
+
+vnoremap <leader>{ c{}<esc>P
+
 " wipe out all buffers
 noremap <silent> <leader>wa :1,9000bwipeout<cr>
 " cd to the directory containing the file in the buffer
