@@ -23,6 +23,15 @@ set autoread
 
 " line number
 set number
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+
 highlight linenr ctermbg=24 ctermfg=3
 
 " search highlight
